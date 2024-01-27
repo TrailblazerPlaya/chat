@@ -1,5 +1,5 @@
 import { jost } from "@/app/ui/fonts";
-import "@/app/ui/global.css";
+import "@/app/ui/global.scss";
 export default function Page() {
 	return (
 		<main className={` ${jost.className}`}>

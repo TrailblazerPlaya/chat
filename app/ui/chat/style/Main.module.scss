@@ -1,0 +1,98 @@
+.Main {
+	font-size: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	height: 100%;
+	max-height: 844px;
+	overflow-y: auto;
+}
+
+.ChatMessage {
+	margin-bottom: 10px; /* Отступ между сообщениями */
+	padding: 10px; /* Отступ внутри сообщения */
+	background-color: #e0e0e0; /* Цвет фона, замените на ваш выбор */
+	border-radius: 8px;
+}
+
+.UserMessage {
+	align-self: flex-end;
+	background-color: #e0e0e0;
+	border-radius: 8px;
+	padding: 10px;
+	margin-bottom: 5px;
+}
+
+.BotMessage {
+	align-self: flex-start;
+	background-color: #d0f0d0;
+	border-radius: 8px;
+	padding: 10px;
+	margin-bottom: 5px;
+	margin-left: 15px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	background-color: #f2f2f7;
+	height: 61px;
+}
+
+.BotAvatar {
+	margin-right: 10px;
+}
+
+.Avatar {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: #ccc;
+	margin-right: 15px;
+}
+
+.StatusIndicator {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: grey;
+}
+
+.Online {
+	background-color: green;
+}
+
+.MessageContent {
+	display: flex;
+	flex-direction: row;
+}
+
+.MessageText {
+	margin-right: 10px;
+	font-size: var(--font-line-m);
+	line-height: 20px;
+	height: 31px;
+}
+
+.MessageTime {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	font-size: 12px;
+	color: #555;
+}
+
+.BotInfo {
+	display: flex;
+	font-size: var(--font-line-m);
+	line-height: 18px;
+}
+
+.BotName {
+	font-size: var(--font-line-m);
+	font-weight: 600;
+	margin-right: 10px;
+}
+
+.BotPosition {
+	font-weight: 400;
+	color: #666668;
+}

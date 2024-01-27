@@ -1,0 +1,11 @@
+.Chat {
+	background-color: var(--background-color);
+	display: flex;
+	flex-direction: column;
+	width: 100vh;
+	max-width: 656px;
+	height: 100vh;
+	max-height: 960px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+}
