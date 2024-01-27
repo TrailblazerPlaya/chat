@@ -1,5 +1,4 @@
 .Main {
-	font-size: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
@@ -9,44 +8,39 @@
 }
 
 .ChatMessage {
-	margin-bottom: 10px; /* Отступ между сообщениями */
-	padding: 10px; /* Отступ внутри сообщения */
-	background-color: #e0e0e0; /* Цвет фона, замените на ваш выбор */
+	margin-bottom: 10px;
 	border-radius: 8px;
 }
 
 .UserMessage {
+	position: relative;
 	align-self: flex-end;
-	background-color: #e0e0e0;
+	background-color: var(--color-blue);
+	color: #fff;
 	border-radius: 8px;
-	padding: 10px;
+	padding: 4px 8px 4px 8px;
 	margin-bottom: 5px;
+	margin-right: 25px;
 }
 
-.BotMessage {
-	align-self: flex-start;
-	background-color: #d0f0d0;
-	border-radius: 8px;
-	padding: 10px;
-	margin-bottom: 5px;
-	margin-left: 15px;
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	background-color: #f2f2f7;
-	height: 61px;
+.UserMessage .MessageTime {
+	color: #fff;
 }
 
-.BotAvatar {
-	margin-right: 10px;
-}
-
-.Avatar {
-	width: 32px;
-	height: 32px;
-	border-radius: 50%;
-	background-color: #ccc;
-	margin-right: 15px;
+.UserMessage::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -9px;
+	width: 20px;
+	height: 20px;
+	background: linear-gradient(
+		138deg,
+		var(--color-blue) 0%,
+		var(--color-blue) 50%,
+		transparent 50%,
+		transparent
+	);
 }
 
 .StatusIndicator {
@@ -57,19 +51,26 @@
 }
 
 .Online {
-	background-color: green;
+	background-color: #34c759;
+	border: 1px solid #fff;
 }
 
+//Message Style
+
 .MessageContent {
+	position: relative;
 	display: flex;
 	flex-direction: row;
+	position: relative;
 }
 
 .MessageText {
 	margin-right: 10px;
+	font-weight: 400;
 	font-size: var(--font-line-m);
 	line-height: 20px;
 	height: 31px;
+	padding-bottom: 11px;
 }
 
 .MessageTime {
@@ -79,6 +80,58 @@
 	font-size: 12px;
 	color: #555;
 }
+
+.MessageActions {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	top: -5px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.MessageActions button {
+	margin: 1px;
+}
+
+.MessageActions:hover {
+	opacity: 1;
+}
+
+.MessageText input {
+	background: inherit;
+	color: #fff;
+	border: none;
+}
+
+.MessageText input:focus {
+	outline: none;
+}
+
+.DeleteButton {
+	border: none;
+	background: none;
+	color: wheat;
+}
+.EditButton {
+	border: none;
+	background: none;
+	color: wheat;
+}
+
+.CurrentDate {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	font-size: var(--font-size-m);
+	color: var(--color-gray);
+}
+
+//Bot Message Style
 
 .BotInfo {
 	display: flex;
@@ -94,5 +147,35 @@
 
 .BotPosition {
 	font-weight: 400;
-	color: #666668;
+	color: var(--color-gray);
+}
+
+.BotMessage {
+	display: flex;
+	align-self: flex-start;
+	flex-direction: row;
+	height: 61px;
+	padding: 4px 8px 4px 8px;
+	margin-left: 5px;
+	background-color: #fff;
+	color: #2c2c2e;
+	border-radius: 8px;
+}
+
+.BotMessage .MessageContent {
+	background-color: #f2f2f7;
+	border-radius: 6px;
+	padding: 6px;
+}
+
+.BotAvatar {
+	margin-right: 10px;
+}
+
+.Avatar {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: #ccc;
+	margin-right: 10px;
 }

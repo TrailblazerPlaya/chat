@@ -14,6 +14,8 @@ interface ChatState {
 	botStatus: string;
 	currentDate: string;
 	addMessage: (message: string) => void;
+	deleteMessage: (index: number) => void;
+	editMessage: (index: number, newText: string) => void;
 }
 
 const getMessagesFromLocalStorage = (): Message[] => {
@@ -34,6 +36,7 @@ export const useChatState = create<ChatState>((set) => ({
 	messages: getMessagesFromLocalStorage(),
 	botStatus: "online",
 	currentDate: format(new Date(), "M/d/yyyy"),
+
 	addMessage: (message) => {
 		const newMessage: Message = {
 			text: message,
@@ -72,5 +75,29 @@ export const useChatState = create<ChatState>((set) => ({
 				};
 			});
 		}
+	},
+	deleteMessage: (index: number) => {
+		set((state) => {
+			const updatedMessages = [...state.messages];
+			updatedMessages.splice(index, 1);
+			saveMessagesToLocalStorage(updatedMessages);
+			return {
+				messages: updatedMessages,
+				botStatus: state.botStatus,
+				currentDate: state.currentDate,
+			};
+		});
+	},
+	editMessage: (index: number, newText: string) => {
+		set((state) => {
+			const updatedMessages = [...state.messages];
+			updatedMessages[index].text = newText;
+			saveMessagesToLocalStorage(updatedMessages);
+			return {
+				messages: updatedMessages,
+				botStatus: state.botStatus,
+				currentDate: state.currentDate,
+			};
+		});
 	},
 }));
