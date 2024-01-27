@@ -33,7 +33,6 @@ export default function Main() {
 						{message.isBot && (
 							<div className={cls.BotAvatar}>
 								<div className={cls.Avatar}>
-									{/* Используйте вашу логику для определения статуса бота и отображения соответствующей аватарки */}
 									<div
 										className={`${cls.StatusIndicator} ${
 											botStatus === "online"
