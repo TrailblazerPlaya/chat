@@ -1,9 +1,12 @@
 "use client";
 
-import { useChatState } from "@/app/lib/state";
 import { useEffect, useState, useRef } from "react";
+import { useChatState } from "@/app/lib/state";
 import { jost } from "@/app/ui/fonts";
 import { format } from "date-fns";
+import Image from "next/image";
+
+import AvatarImageSrc from "@/public/avatar.svg";
 
 import { EditOutlined } from "@ant-design/icons";
 import { DeleteOutlined } from "@ant-design/icons";
@@ -72,7 +75,14 @@ export default function Main() {
 												: ""
 										}`}
 									/>
-									<div className={cls.AvatarImage} />
+									<div className={cls.AvatarImage}>
+										<Image
+											src={AvatarImageSrc}
+											width={32}
+											height={32}
+											alt="Bot Avatar"
+										/>
+									</div>
 								</div>
 							</div>
 						)}
