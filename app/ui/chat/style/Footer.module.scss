@@ -1,6 +1,37 @@
 .Footer {
+	border-top: 1px solid #e5e5ea;
 	font-size: 20px;
 	display: flex;
 	justify-content: center;
-	align-items: flex-end;
+	align-items: center;
+	height: 48px;
+}
+
+.FooterInput {
+	width: 520px;
+	border: none;
+	font-size: var(--font-line-m);
+	line-height: 20px;
+}
+.FooterInput:focus {
+	border: none;
+	outline: none;
+	color: #3d3d3d;
+}
+.FooterInput::placeholder {
+	color: #666668;
+}
+
+.Smile {
+	margin-right: 12px;
+}
+
+.Upload {
+	margin-left: 12px;
+	margin-right: 12px;
+}
+
+.Samoletik,
+.ActiveSamoletik {
+	cursor: pointer;
 }

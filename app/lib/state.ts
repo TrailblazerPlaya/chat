@@ -9,6 +9,11 @@ interface Message {
 	isBot?: boolean;
 }
 
+// interface ImageMessage extends Message {
+// 	type: "image";
+// 	imageUrl: string;
+// }
+
 interface ChatState {
 	messages: Message[];
 	botStatus: string;
