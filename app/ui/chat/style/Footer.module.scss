@@ -23,15 +23,23 @@
 }
 
 .Smile {
-	margin-right: 12px;
+	margin-right: 20px;
 }
 
 .Upload {
-	margin-left: 12px;
 	margin-right: 12px;
+}
+
+.Samoletik {
+	color: #8e8e93;
 }
 
 .Samoletik,
 .ActiveSamoletik {
+	width: 10px;
 	cursor: pointer;
+}
+
+.ActiveSamoletik {
+	color: #007aff;
 }

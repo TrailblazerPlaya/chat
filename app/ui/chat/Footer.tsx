@@ -1,14 +1,13 @@
 "use client";
 
 import { useChatState } from "@/app/lib/state";
-import { jost } from "@/app/ui/fonts";
 import { useState, useRef } from "react";
+import { jost } from "@/app/ui/fonts";
 import Image from "next/image";
 
-import ActiveSamoletik from "@/public/active-samolet.svg";
-import Samoletik from "@/public/samolet.svg";
 import UploadImg from "@/public/dog.svg";
 import Smile from "@/public/smile.svg";
+import { SendOutlined } from "@ant-design/icons";
 
 import cls from "@/app/ui/chat/style/Footer.module.scss";
 
@@ -50,8 +49,7 @@ export default function Footer() {
 		const files = event.target.files;
 		if (files && files.length > 0) {
 			const file = files[0];
-			// Обрабатываем загруженный файл, например, отправляем его в чат
-			// Вместо alert можно использовать библиотеку для работы с изображениями
+
 			alert(`Uploaded file: ${file.name}`);
 		}
 	};
@@ -93,13 +91,13 @@ export default function Footer() {
 				onChange={handleFileChange}
 				style={{ display: "none" }}
 			/>
-			<Image
-				src={Samoletik}
-				width={16}
-				height={16}
-				alt="samoletik"
+			<SendOutlined
 				onClick={handleSendMessage}
-				className={cls.Samoletik}
+				className={`${cls.Samoletik} ${
+					isFocused || newMessage.trim() !== ""
+						? cls.ActiveSamoletik
+						: ""
+				}`}
 			/>
 		</main>
 	);
