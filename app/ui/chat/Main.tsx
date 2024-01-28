@@ -7,9 +7,12 @@ import { format } from "date-fns";
 import Image from "next/image";
 
 import AvatarImageSrc from "@/public/avatar.svg";
+import Check from "@/public/check.svg";
 
 import { EditOutlined } from "@ant-design/icons";
 import { DeleteOutlined } from "@ant-design/icons";
+
+import TextAreaAutorize from "@/app/ui/chat/features/TextAreaAutosize";
 
 import cls from "@/app/ui/chat/style/Main.module.scss";
 
@@ -43,10 +46,11 @@ export default function Main() {
 	};
 
 	const handleKeyDown = (
-		event: React.KeyboardEvent<HTMLInputElement>,
+		event: React.KeyboardEvent<HTMLTextAreaElement>,
 		index: number
 	) => {
 		if (event.key === "Enter") {
+			event.preventDefault();
 			handleSaveEdit();
 		}
 	};
@@ -54,6 +58,7 @@ export default function Main() {
 	const isValidTimestamp = (timestamp: number) => {
 		return !isNaN(timestamp) && timestamp > 0;
 	};
+
 	return (
 		<main ref={mainRef} className={` ${jost.className}  ${cls.Main}`}>
 			<div className={cls.CurrentDate}>{currentDate}</div>
@@ -98,12 +103,13 @@ export default function Main() {
 								)}
 								<div className={cls.MessageText}>
 									{editIndex === index ? (
-										<input
-											type="text"
+										<TextAreaAutorize
 											value={editText}
 											onChange={(e) =>
 												setEditText(e.target.value)
 											}
+											autofocus
+											className={cls.EditInput}
 											onKeyDown={(e) =>
 												handleKeyDown(e, index)
 											}
@@ -149,6 +155,24 @@ export default function Main() {
 										"h:mm a"
 									)}
 							</div>
+							{!message.isBot && (
+								<div className={cls.Check}>
+									<Image
+										src={Check}
+										width={12}
+										height={12}
+										alt="check"
+										className={cls.CheckItem}
+									/>
+									<Image
+										src={Check}
+										width={12}
+										height={12}
+										alt="check"
+										className={cls.CheckItem}
+									/>
+								</div>
+							)}
 						</div>
 					</div>
 				))}

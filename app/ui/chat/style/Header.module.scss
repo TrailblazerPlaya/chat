@@ -1,13 +1,44 @@
 .Header {
 	width: 100%;
-	height: 68px;
+	height: var(--header-height);
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-white);
+	border-bottom: 1px solid #e5e5ea;
+}
+
+.HeaderImage {
+	position: absolute;
+	left: 13px;
+	& > * {
+		margin-right: -5px;
+		vertical-align: top;
+	}
+}
+
+.HeaderTitle {
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 	align-items: center;
-	background-color: #f0f0f0;
-	border-bottom: 1px solid #ccc;
+	margin: 0 auto;
+}
+
+.HeaderTitle p {
+	font-weight: 400;
+	font-size: var(--font-size-m);
+	color: #666668;
+}
+
+.HeaderIcon {
+	position: absolute;
+	right: 24px;
 }
 
 .ChatTitle {
-	font-size: 14px;
+	font-size: var(--font-line-m);
+	font-weight: 600;
+	line-height: 18px;
 }
