@@ -250,3 +250,15 @@
 		max-width: 200px;
 	}
 }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.EditInput {
+		max-width: 200px;
+	}
+}
+
+@media screen and (min-width: 1025px) {
+	.EditInput {
+		max-width: 200px;
+	}
+}
