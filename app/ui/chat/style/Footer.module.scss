@@ -28,6 +28,7 @@
 
 .Upload {
 	margin-right: 12px;
+	margin-left: 12px;
 }
 
 .Samoletik {
@@ -42,4 +43,9 @@
 
 .ActiveSamoletik {
 	color: #007aff;
+}
+@media screen and (max-width: 768px) {
+	.FooterInput {
+		width: 240px;
+	}
 }
